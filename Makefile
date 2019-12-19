@@ -24,8 +24,8 @@ DEV_REGISTRY ?= $(REGISTRY_ERR)
 _git_remote_urls := $(shell git remote | xargs -n1 git remote get-url --all)
 IS_PRIVATE ?= $(findstring private,$(_git_remote_urls))
 
-RELEASE_DOCKER_REPO ?= quay.io/datawire/ambassador$(if $(IS_PRIVATE),-private)
-BASE_DOCKER_REPO    ?= quay.io/datawire/ambassador-base$(if $(IS_PRIVATE),-private)
+RELEASE_DOCKER_REPO ?= albertdb/ambassador$(if $(IS_PRIVATE),-private)
+BASE_DOCKER_REPO    ?= albertdb/ambassador-base$(if $(IS_PRIVATE),-private)
 DEV_DOCKER_REPO     ?= $(DEV_REGISTRY)/dev
 
 DOCKER_OPTS ?=
